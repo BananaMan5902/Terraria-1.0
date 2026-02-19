@@ -1,0 +1,14 @@
+export class DayNight {
+    constructor() {
+        this.time = 0;
+    }
+
+    update(delta) {
+        this.time += delta * 0.00005;
+    }
+
+    getSkyColor() {
+        const value = Math.floor((Math.sin(this.time) + 1) * 100);
+        return `rgb(${value}, ${value}, 255)`;
+    }
+}
